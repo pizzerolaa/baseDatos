@@ -1,10 +1,10 @@
 var admin = require("firebase-admin");
 
-var serviceAccount = require("../../serviceAccountKey.json");
+var serviceAccount = require("../../serviceAccountKeys.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://iot2023-5d518-default-rtdb.firebaseio.com"
+  databaseURL: "https://iotproject-26b0f-default-rtdb.firebaseio.com/"
 });
 
 const db = admin.database();
@@ -12,12 +12,25 @@ const db = admin.database();
 const { Router}= require('express');
 const router = Router();
 
-router.get('/', (req, res) => {
-    db.ref('contacts').once('value', (snapshot) => {
-       data = snapshot.val();
-       res.render('index', {contacts: data})
-    });
+router.get('/main', (req, res) => {
+    db.ref('DHT').once('value', (snapshot) => {
+        data = snapshot.val();
+        res.render('main', {});
+     });
 })
+
+router.get('/plants', (req, res) => {
+    res.render('plants', {});
+})
+
+router.get('/data', (req, res) => {
+    res.render('data', {});
+})
+
+router.get('/', (req, res) => {
+    res.render('main', {});
+})
+
 
 router.post('/new-contact', (req, res) => {
     const newContact = {
@@ -34,5 +47,34 @@ router.get('/delete-contact/:id', (req, res) => {
     db.ref('contacts/' + req.params.id).remove();
     res.redirect('/');
 });
+
+db.ref('DHT').on('value', (snapshot) => {
+    data = snapshot.val();
+    if (data) {
+        aWss.clients.forEach((client) => {
+            client.send(JSON.stringify(data));
+        })
+    }
+});
+
+db.ref('Distance').on('value', (snapshot) => {
+    data = snapshot.val();
+    if (data) {
+        aWss.clients.forEach((client) => {
+            client.send(JSON.stringify({distance:data}));
+        })
+    }
+});
+
+db.ref('LDR_Value').on('value', (snapshot) => {
+    data = snapshot.val();
+    if (data) {
+        aWss.clients.forEach((client) => {
+            client.send(JSON.stringify({ldr_value:data}));
+        })
+    }
+});
+
+//CREAR FUNCION PARA SENSOR PH
 
 module.exports = router;

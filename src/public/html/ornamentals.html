@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="../styles/plants.css" />
+    <title>ECORIEGOTEC</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header-container">
+        <header>
+          <div class="name-logo">
+            <h4><a href="/main">ecoriegotec.com</a></h4>
+          </div>
+          <nav>
+            <ul class="menu-open">
+              <li><a href="/main">inicio</a></li>
+              <li><a href="/plants">plantas</a></li>
+              <li><a href="/data">datos</a></li>
+            </ul>
+          </nav>
+          <div class="menu-button" onclick="toggleMenu()">
+            <span class="material-symbols-outlined"> menu </span>
+          </div>
+        </header>
+      </div>
+      <!-- Main -->
+      <div class="plants-main-container">
+        <div class="plants-main-text">
+          <div class="plants-presentation-title">
+            <h1>PLANTAS ORNAMENTALES</h1>
+          </div>
+        </div>
+        <div class="plants-columns-section">
+          <div class="plants-columns-images">
+            <section>
+              <div class="plants-vegetables-image">
+                <img src="../images/types_plants/petunias.png" alt="Petunia" />
+              </div>
+              <div class="plants-vegetables-text">
+                <a href="#">
+                  <h4>Petunias</h4>
+                </a>
+              </div>
+            </section>
+
+            <section>
+              <div class="plants-trees-image">
+                <img src="../images/types_plants/geranio.png" alt="Geranio" />
+              </div>
+              <div class="plants-trees-text">
+                <a href="#">
+                  <h4>Geranios</h4>
+                </a>
+              </div>
+            </section>
+
+            <section>
+              <div class="plants-gardens-image">
+                <img src="../images/types_plants/rosas.png" alt="Rosas" />
+              </div>
+              <div class="plants-gardens-text">
+                <a href="#">
+                  <h4>Rosas</h4>
+                </a>
+              </div>
+            </section>
+
+            <section>
+              <div class="plants-greenhouses-image">
+                <img src="../images/types_plants/lirios.png" alt="Lirios" />
+              </div>
+              <div class="plants-greenhouses-text">
+                <a href="#">
+                  <h4>Lirios</h4>
+                </a>
+              </div>
+            </section>
+
+            <section>
+              <div class="plants-ornamentals-image">
+                <img
+                  src="../images/types_plants/orquidea.png"
+                  alt="Orquídeas"
+                />
+              </div>
+              <div class="plants-ornamentals-text">
+                <a href="#">
+                  <h4>Orquídeas</h4>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <footer>
+        <div class="footer-wrapper">
+          <div class="social-wrapper">
+            <div class="social-links">
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/_fherlg/"
+                    title="Instagram"
+                  >
+                    <img src="../images/instagram.svg" alt="Instagram" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/pizzerolaa" title="GitHub">
+                    <img src="../images/github.svg" alt="GitHub" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/fernando-l%C3%B3pez-a9231a26b/"
+                    title="Linkedin"
+                  >
+                    <img src="../images/linkedin.svg" alt="Linkedin" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-columns">
+            <div class="footer-links">
+              <div class="footer-logo"><h4>ecoriegotec.com</h4></div>
+              <section>
+                <h3>Productos</h3>
+                <ul>
+                  <li><a href="#">Herramientas</a></li>
+                  <li><a href="#">Regadores</a></li>
+                  <li><a href="#">Sistemas</a></li>
+                </ul>
+              </section>
+              <section>
+                <h3>Recursos</h3>
+                <ul>
+                  <li><a href="#">Soporte</a></li>
+                  <li><a href="#">Sitemap</a></li>
+                  <li><a href="#">Boletín</a></li>
+                </ul>
+              </section>
+              <section>
+                <h3>Empresa</h3>
+                <ul>
+                  <li><a href="../main.html">Sobre nosotros</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contacto</a></li>
+                </ul>
+              </section>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <div class="footer-description">
+              <h3>Controla tus propios sistemas de riego</h3>
+              <p>Diseña y crealos como tu quieras</p>
+            </div>
+            <small
+              >© Ecoriegos Tecnológicos Ltd. <span id="year"></span>, Todos los
+              derechos reservados</small
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>

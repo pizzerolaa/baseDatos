@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="/styles/data.css" />
+
+<div class="main-container">
+        <div class="main-text">
+          <div class="presentation-title">
+            <h1>DATOS EN TIEMPO REAL</h1>
+          </div>
+          <div class="presentation-text">
+            <div class="presentation-text-text">
+              <p>Tipo de planta seleccionada:</p>
+            </div>
+            <div class="presentation-text-plant-name">
+              <p id="plant-name"></p>
+            </div>
+            <div class="presentation-text-img">
+              <img id="plant-image" src="" alt="Imagen planta seleccionada" />
+            </div>
+          </div>
+          <div class="important-info">
+            <div class="important-info-text">
+              <h4>Información en tiempo real:</h4>
+            </div>
+            <div class="important-info-text-text">
+              <p>
+                La información que se muestra a continuación es en tiempo real,
+                por lo que puede variar dependiendo de las condiciones
+                ambientales.
+              </p>
+            </div>
+            <div class="important-info-data">
+              <div class="important-info-data-temp">
+                <p>Temperatura:</p>
+                <p><span id="temperature-value">--</span>°</p>
+              </div>
+              <div class="important-info-data-hum">
+                <p>Humedad:</p>
+                <p><span id="humidity-value">--</span>%</p>
+              </div>
+              <div class="important-info-data-lum">
+                <p>Luminosidad:</p>
+                <p><span id="luminosity-value">--</span> LUX</p>
+              </div>
+              <div class="important-info-data-ph">
+                <p>Nivel de PH:</p>
+                <p id="ph-value">--</p>
+              </div>
+              <div class="important-info-data-distance">
+                <p>Distancia (objeto cercano):</p>
+                <p><span id="distance-value">--</span> cm</p>
+              </div>
+            </div>
+            <div class="important-info-graph">
+              <div class="important-info-graph-text">
+                <p>Gráfica de datos histórico:</p>
+              </div>
+              <div class="important-info-graph-img">
+                <!--Grafica, se planea usar D3-node-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
