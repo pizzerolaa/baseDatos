@@ -75,6 +75,13 @@ db.ref('LDR_Value').on('value', (snapshot) => {
     }
 });
 
-//CREAR FUNCION PARA SENSOR PH
+db.ref('Soil_cap').on('value', (snapshot) => {
+    data = snapshot.val();
+    if (data) {
+        aWss.clients.forEach((client) => {
+            client.send(JSON.stringify({csms_value:data}));
+        })
+    }
+});
 
 module.exports = router;

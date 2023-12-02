@@ -12,36 +12,42 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <link rel="stylesheet" href="/styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
     <!-- This is the connection to the socket -->
     let webSocket = new WebSocket(location.origin.replace(/^http/, 'ws'));
     let el;
-    let temperatures = [];
-    let humiditys = [];
-    let ldr_values = [];
+    window.temperatures = [];
+    window.humiditys = [];
     webSocket.onmessage = (event) => {
       el = document.getElementById('temperature-value');
       hum = document.getElementById('humidity-value');
       lum = document.getElementById('luminosity-value');
-      //ph = document.getElementById('ph-value');
       dis = document.getElementById('distance-value');
+      cap = document.getElementById('csms-value');
       data = JSON.parse(event.data);
+      console.log(data);
       if(data.temperature){
       el.innerHTML = data.temperature;
-      temperatures.push({time:Date.now(), value:data.temperature});
+      window.temperatures.push({time:Date.now(), value:data.temperature});
+      window.loadChart();
       }
       if(data.humidity){
         hum.innerHTML = data.humidity;
-        humiditys.push({time:Date.now(), value:data.humidity});
       }
       if(data.ldr_value){
         lum.innerHTML = data.ldr_value;
-        ldr_values.push({time:Date.now(), value:data.ldr_value});
       }
       if(data.distance){
         dis.innerHTML = data.distance;
       }
+      if(data.csms_value){
+        cap.innerHTML = data.csms_value;
+        window.humiditys.push({time:Date.now(), value:data.csms_value});
+        window.loadChart2();
+      }
     };
+
   </script>
     <title>ECORIEGOTEC</title>
   </head>

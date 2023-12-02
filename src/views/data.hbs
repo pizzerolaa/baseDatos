@@ -41,8 +41,8 @@
                 <p><span id="luminosity-value">--</span> LUX</p>
               </div>
               <div class="important-info-data-ph">
-                <p>Nivel de PH:</p>
-                <p id="ph-value">--</p>
+                <p>Humedad de la tierra:</p>
+                <p><span id="csms-value">--</span></p>
               </div>
               <div class="important-info-data-distance">
                 <p>Distancia (objeto cercano):</p>
@@ -55,8 +55,20 @@
               </div>
               <div class="important-info-graph-img">
                 <!--Grafica, se planea usar D3-node-->
+                <canvas id="temp-graph" width="400" height="200"></canvas>
+              </div>
+              <br>
+              <div class="important-info-graph-img2">
+                <canvas id="hum-graph" width="400" height="200"></canvas>
               </div>
             </div>
+          </div>
+          <div class="main-button">
+            <a href="./plants.html">
+              <button class="button-plants" role="button" onclick="startWatering()">
+                <span class="text">Iniciar riego</span>
+              </button>
+            </a>
           </div>
         </div>
       </div>
